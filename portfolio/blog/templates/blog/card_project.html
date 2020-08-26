@@ -1,0 +1,17 @@
+    <div class="card card-project">
+        <div class="card-header">
+            <h1>{{ content.title|default:"failed to load title"}}</h1>
+        </div>
+        <div class="card-body">
+            <div>
+                <p>{{ content.text_snippet|default:"failed to load text" }}</p>
+            </div>
+            {% comment %} {{ content.cover_image }} {% endcomment %}
+            <div class="cover-parent">
+                {% comment %} <img src="{{ content.cover_image }}" alt="cover image" class="cover"> {% endcomment %}
+            </div>
+        </div>
+        <div class="card-footer">
+            <p>Published: {{ content.pub_date|default:"failed to load date" }}</p>
+        </div>
+    </div>

@@ -1,0 +1,83 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andin's</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}"></head>
+    <link rel="stylesheet" href="{% static 'css/card.css' %}"></head>
+<body>
+    <main class="grid centered">
+        <section class="grid-1 pancake">
+            <div class="cake-header">
+                <div class="avatar-frame">
+                    <img class="profile-pic" src="{% static 'profile/profilepic.jpg' %}" alt="profile pic">
+                </div>
+                <div class="profile-name">
+                    <h1>Andin Farrel</h1>
+                    <p>Full-Stack WevDev | Final Year Student</p>
+                </div>
+            </div>
+            <div class="cake-body-skills">
+                <h2>Skills</h2>
+                <hr>
+                <div class="skills">
+                    <div class="container">
+                        <h3>Web Development</h3>
+                        <p>Angular | Django</p>
+                        <p>Firebase | Node.js</p>
+                    </div>
+                    <div class="container">
+                        <h3>Languages</h3>
+                        <p>HTML | CSS | JavaScript | TypeScript</p>
+                        <p>Java | C/C++ | Haskell </p>
+                    </div>
+                </div>
+                <div class="cake-body-education">
+                    <h2>Education</h2>
+                    <hr>
+                    <div class="container">
+                        <h3>University of Birmingham</h3>
+                        <p>BSc. Computer Science</p>
+                        <p>Predicted 1st Class</p>
+                    </div>
+    
+                    <br>
+                </div>  
+            </div>
+            <div class="cake-footer">
+                <button>Full resume</button>
+            </div>
+        </section>
+        <section class="grid-2">
+            <div>
+                <h1>Blog Posts</h1>
+                <hr>
+            </div>
+            <div class="scroll-horizontal">
+                {% for post in posts %}
+                    {% include "./card_post.html" with content=post only%}
+                {% endfor %}
+            </div>
+        </section>
+        <section class="grid-3">
+            <div>
+                <h1>Projects</h1>
+                <hr>
+            </div>
+            <div class="scroll-horizontal">
+                {% for project in projects %}
+                    {% include "./card_project.html" with content=project only%}
+                {% endfor %}
+            </div>
+        </section>
+        
+        <!-- <footer>
+            <p>&copy; Andin Farrel 2020</p> 
+        </footer> -->
+    </main>
+</body>
+</html>

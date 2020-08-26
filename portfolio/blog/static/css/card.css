@@ -1,0 +1,36 @@
+.card {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    margin: 1rem;
+    border-radius: 20px;
+    box-shadow: 10px 10px;
+    flex: 0 0 auto;
+    width: clamp(26ch, 50%, 46ch);
+}
+
+.card-header {
+    background-color: var(--bittersweet);
+    /* border-top-left-radius: 20px; */
+    border-top-right-radius: 20px;
+}
+
+.card-body {
+    background-color: var(--verdigris);
+}
+
+.card-footer {
+    background-color: var(--cg-blue);
+    border-bottom-left-radius: 20px;
+    
+    box-shadow: 10px 10px;
+}
+
+
+.cover-parent {
+    overflow: hidden;
+    padding: 2px;
+}
+.cover {
+    width: 80%;
+    height:auto;
+}

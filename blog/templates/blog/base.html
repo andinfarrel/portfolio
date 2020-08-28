@@ -60,7 +60,7 @@
             </div>
             <div class="scroll-horizontal">
                 {% for post in posts %}
-                    {% include "./card_post.html" with content=post id=post.id only%}
+                    {% include "./card.html" with content=post id=post.id type="blog" only%}
                 {% endfor %}
             </div>
         </section>
@@ -71,7 +71,7 @@
             </div>
             <div class="scroll-horizontal">
                 {% for project in projects %}
-                    {% include "./card_project.html" with content=project only%}
+                    {% include "./card.html" with content=project id=project.id type="project" only%}
                 {% endfor %}
             </div>
         </section>

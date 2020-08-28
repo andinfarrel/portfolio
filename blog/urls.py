@@ -5,7 +5,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.index, name="index"),
-    path('blog/<int:post_id>/', views.blog, name="blogpost")
+    path('blog/<int:post_id>/', views.blog, name="blogpost"),
+    path('project/<int:project_id>/', views.project, name="projectpage")
 ] 
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -3,18 +3,21 @@ section {
     text-align: center;
 }
 
+.flex {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
 
 .blog-post {
     display: grid;
-    grid-template-rows: 1fr 4fr 0.5fr;
-    grid-column: 1/9;
-    grid-row: 1/5;
+    grid-template-rows: auto 4fr auto;
 }
 
 .back-button {
     justify-self: center;
-    grid-column: 1/9;
-    grid-row: 5/6;
+    margin-top: 1em;
 }
 
 .head {
@@ -22,6 +25,8 @@ section {
 }
 
 .bod {
+    padding-left: 10%;
+    padding-right: 10%;
     background-color: var(--peach-puff);
 }
 

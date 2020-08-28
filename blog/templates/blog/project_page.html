@@ -12,17 +12,17 @@
     <link rel="stylesheet" href="{% static 'css/card.css' %}">
 </head>
 <body>
-    <main class="flex">
+    <main class="grid">
         <section class="blog-post">
             <div class="head content-center">
-                <h1>{{ post.title|default:"failed to load title" }}</h1>
+                <h1>{{ project.title|default:"failed to load title" }}</h1>
             </div>
             <div class="bod content-center">
-                <p>{{ post.full_text|linebreaks|default:"failed to load content" }}</p>
+                <p>{{ project.text_snippet|default:"failed to load content" }}</p>
             </div>
             <div class="foot content-center">
                 <div class="content-center">
-                    <p>{{ post.pub_date|default:"failed to load time stamp" }}</p>
+                    <p>{{ project.pub_date|default:"failed to load time stamp" }}</p>
                 </div>
             </div>
         </section>

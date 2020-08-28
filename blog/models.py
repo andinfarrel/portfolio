@@ -5,7 +5,8 @@ from django.utils import timezone
 class Post(models.Model):
     author = models.CharField(max_length=50,default='')
     title = models.CharField(max_length=50)
-    text_snippet = models.CharField(max_length=200)
+    text_snippet = models.CharField(max_length=20000)
+    full_text = models.TextField(default="")
     pub_date = models.DateTimeField( auto_now=False, auto_now_add=False)
 
     def __str__(self):
@@ -18,7 +19,7 @@ class Post(models.Model):
 class Project(models.Model):
     title = models.CharField(max_length=50,default='')
     cover_image = models.ImageField(upload_to='blog/static/images', height_field=None, width_field=None, max_length=None)
-    text_snippet = models.CharField(max_length=50)
+    text_snippet = models.CharField(max_length=20000)
     link = models.URLField(max_length=200)
     pub_date = models.DateTimeField(auto_now=False, auto_now_add=False)
 

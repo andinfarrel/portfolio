@@ -5,7 +5,11 @@
         </div>
         <div class="card-body">
             <p>{{ content.text_snippet|truncatewords:12|default:"failed to load text" }}</p>
-            <button onclick="location.href='blog/{{ id }}'">view</button>
+            {% if type ==  "blog" %}
+                <button onclick="location.href='blog/{{ id }}'">view</button>
+            {% elif type == "project" %}
+                <button onclick="location.href='project/{{ id }}'">view</button>
+            {% endif %}
         </div>
         <div class="card-footer">
             <p>Published: {{ content.pub_date|default:"failed to load date" }}</p>

@@ -1,0 +1,30 @@
+section {
+    padding: 20px;
+    text-align: center;
+}
+
+
+.blog-post {
+    display: grid;
+    grid-template-rows: 1fr 4fr 0.5fr;
+    grid-column: 1/9;
+    grid-row: 1/5;
+}
+
+.back-button {
+    justify-self: center;
+    grid-column: 1/9;
+    grid-row: 5/6;
+}
+
+.head {
+    background-color: var(--verdigris);
+}
+
+.bod {
+    background-color: var(--peach-puff);
+}
+
+.foot {
+    background-color: var(--bittersweet);
+}

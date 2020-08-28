@@ -27,6 +27,10 @@ h1, h2, h3 {
 }
 
 h1 {
+    font-size: x-large;
+}
+
+h2 {
     font-size: larger;
 }
 
@@ -78,6 +82,7 @@ button {
 button:hover {
     transform: scale(1.025);
     box-shadow: 4px 4px black;
+    /* width: 1000px; */
 }
 
 button:active {

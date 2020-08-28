@@ -1,0 +1,33 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post Title</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <link rel="stylesheet" href="{% static 'css/card.css' %}">
+</head>
+<body>
+    <main class="grid">
+        <section class="blog-post">
+            <div class="head content-center">
+                <h1>{{ post.title|default:"failed to load title" }}</h1>
+            </div>
+            <div class="bod content-center">
+                <p>{{ post.text_snippet|default:"failed to load content" }}</p>
+            </div>
+            <div class="foot content-center">
+                <div class="content-center">
+                    <p>{{ post.pub_date|default:"failed to load time stamp" }}</p>
+                </div>
+            </div>
+        </section>
+        <div class="back-button">
+            <button onclick="location.href='{% url 'index' %}'">Back</button>
+        </div>
+    </main>
+</body>

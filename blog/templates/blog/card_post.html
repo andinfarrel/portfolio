@@ -1,10 +1,11 @@
 
-    <div class="card">
+    <div class="card" >
         <div class="card-header">
             <h1>{{ content.title|default:"failed to load title"}}</h1>
         </div>
         <div class="card-body">
-            <p>{{ content.text_snippet|default:"failed to load text" }}</p>
+            <p>{{ content.text_snippet|truncatewords:12|default:"failed to load text" }}</p>
+            <button onclick="location.href='blog/{{ id }}'">view</button>
         </div>
         <div class="card-footer">
             <p>Published: {{ content.pub_date|default:"failed to load date" }}</p>

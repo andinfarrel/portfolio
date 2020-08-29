@@ -1,17 +1,30 @@
 
     <div class="card" >
         <div class="card-header">
-            <h1>{{ content.title|default:"failed to load title"}}</h1>
+            {% if type == "contact" %}
+                <h1>{{ content.platform_name|default:"failed to load title"}}</h1>
+            {% else %}
+                <h1>{{ content.title|default:"failed to load title"}}</h1>
+            {% endif %}
         </div>
         <div class="card-body">
-            <p>{{ content.text_snippet|truncatewords:12|default:"failed to load text" }}</p>
+            {% if type != "contact" %}
+                <p>{{ content.text_snippet|truncatewords:12|default:"failed to load text" }}</p>
+            {% else %}
+                {% comment %} <img src="{% static 'images/profilepic.JPG' %}" alt="profile pic"> {% endcomment %}
+                <p>{{ content.url|truncatewords:12|default:"failed to load text" }}</p>
+            {% endif %}
             {% if type ==  "blog" %}
                 <button onclick="location.href='blog/{{ id }}'">view</button>
             {% elif type == "project" %}
                 <button onclick="location.href='project/{{ id }}'">view</button>
+            {% elif type == "contact" %}
+                <button onclick="window.open('{{ content.url }}', '_blank')">visit</button>
             {% endif %}
         </div>
-        <div class="card-footer">
-            <p>Published: {{ content.pub_date|default:"failed to load date" }}</p>
-        </div>
+        {% if  content.pub_date %} 
+            <div class="card-footer">
+                <p>Published: {{ content.pub_date|default:"failed to load date" }}</p>
+            </div>
+        {% endif %}
     </div>

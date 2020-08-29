@@ -30,3 +30,13 @@ class Project(models.Model):
         self.pub_date = timezone.now()
         self.save()
     
+class Contact(models.Model):
+    platform_name = models.CharField(default="", max_length=50)
+    url = models.URLField(default="", max_length=200)
+    image = models.ImageField(upload_to='blog/static/images', height_field=None, width_field=None, max_length=None)
+
+    def __str__(self):
+        return self.platform_name
+
+    def publish(self):
+        self.save()

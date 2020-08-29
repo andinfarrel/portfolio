@@ -66,12 +66,12 @@
         </section>
         <section class="grid-3">
             <div>
-                <h1>Projects</h1>
+                <h1>Contact Me</h1>
                 <hr>
             </div>
             <div class="scroll-horizontal">
-                {% for project in projects %}
-                    {% include "./card.html" with content=project id=project.id type="project" only%}
+                {% for contact in contacts %}
+                    {% include "./card.html" with content=contact id=contact.id type="contact" only%}
                 {% endfor %}
             </div>
         </section>

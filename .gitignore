@@ -6,4 +6,5 @@ myvenv
 db.sqlite3
 /static
 media
+secret.txt
 .DS_Store

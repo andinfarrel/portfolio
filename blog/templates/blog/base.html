@@ -26,16 +26,28 @@
                 <h2>Skills</h2>
                 <hr>
                 <div class="skills">
+                    {% for categories in skills_categories %}
                     <div class="container">
-                        <h3>Web Development</h3>
-                        <p>Angular | Django</p>
-                        <p>Firebase | Node.js</p>
+                        <h3>{{ categories }}</h3>
+                        {% for skill in categories.skillitem_set.all %}
+                        <p>{{skill}}</p>
+                        {% endfor %}
                     </div>
+                    {% endfor %}
+                    <button onclick="window.location.href='{% url 'form_skill' %}'">Add</button>
+                </div>
+                <h2>Experiences</h2>
+                <hr>
+                <div class="skills">
+                    {% for experience in experiences %}
                     <div class="container">
-                        <h3>Languages</h3>
-                        <p>HTML | CSS | JavaScript | TypeScript</p>
-                        <p>Java | C/C++ | Haskell </p>
+                        <h3>{{ experience.role }}</h3>
+                        <p><i>company: {{ experience.company }}</i></p>                     
+                        <p>{{ experience.start_date }} - {{ experience.end_date }}</p>
+
                     </div>
+                    {% endfor %}
+                    <button onclick="window.location.href='{% url 'form_exp' %}'">Add</button>
                 </div>
                 <div class="cake-body-education">
                     <h2>Education</h2>
@@ -50,7 +62,6 @@
                 </div>  
             </div>
             <div class="cake-footer">
-                {% comment %} <button>Full resume</button> {% endcomment %}
             </div>
         </section>
         <section class="grid-2">

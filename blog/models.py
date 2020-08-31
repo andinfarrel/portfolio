@@ -40,3 +40,37 @@ class Contact(models.Model):
 
     def publish(self):
         self.save()
+
+class SkillsCategory(models.Model):
+    category = models.CharField(default="", max_length=50)
+    
+    def __str__(self):
+        return self.category
+    
+
+class SkillItem(models.Model):
+    category = models.ForeignKey(SkillsCategory, on_delete=models.CASCADE)
+    item_text = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.item_text
+    
+class Experience(models.Model):
+    role = models.CharField( max_length=50)
+    company = models.CharField( max_length=50)
+
+    start_date = models.DateField(auto_now=False, auto_now_add=False)
+    end_date = models.DateField(auto_now=False, auto_now_add=False)
+
+    def correctDates(start_date, end_date):
+        return start_date <= end_date
+
+    def __str__(self):
+        return self.role
+
+    def publish(self):
+        if self.correctDates(self.start_date, self.end_date):
+            self.save()
+            return True
+        else:
+            return False
